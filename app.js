@@ -10,7 +10,7 @@
 var taskInput = document.getElementById('new-task'); //Add a new task.
 var addButton = document.getElementsByTagName('button')[0]; //first button
 var incompleteTaskHolder = document.getElementById('incomplete-tasks'); //ul of #incomplete-tasks
-var completedTasksHolder = document.getElementById('completed-tasks'); //completed-tasks
+var complTasksHolder = document.getElementById('compl-tasks'); //compl-tasks
 
 //New task list item
 var createNewTaskElement = function (taskString) {
@@ -63,7 +63,7 @@ var addTask = function () {
 
   //Append listItem to incompleteTaskHolder
   incompleteTaskHolder.appendChild(listItem);
-  bindTaskEvents(listItem, taskCompleted);
+  bindTaskEvents(listItem, taskcompl);
 
   taskInput.value = '';
 };
@@ -105,13 +105,13 @@ var deleteTask = function () {
   ul.removeChild(listItem);
 };
 
-//Mark task completed
-var taskCompleted = function () {
+//Mark task compl
+var taskcompl = function () {
   console.log('Complete Task...');
 
-  //Append the task list item to the #completed-tasks
+  //Append the task list item to the #compl-tasks
   var listItem = this.parentNode;
-  completedTasksHolder.appendChild(listItem);
+  complTasksHolder.appendChild(listItem);
   bindTaskEvents(listItem, taskIncomplete);
 };
 
@@ -122,7 +122,7 @@ var taskIncomplete = function () {
   //Append the task list item to the #incomplete-tasks.
   var listItem = this.parentNode;
   incompleteTaskHolder.appendChild(listItem);
-  bindTaskEvents(listItem, taskCompleted);
+  bindTaskEvents(listItem, taskcompl);
 };
 
 var ajaxRequest = function () {
@@ -147,21 +147,21 @@ var bindTaskEvents = function (taskListItem, checkBoxEventHandler) {
   editButton.onclick = editTask;
   //Bind deleteTask to delete button.
   deleteButton.onclick = deleteTask;
-  //Bind taskCompleted to checkBoxEventHandler.
+  //Bind taskcompl to checkBoxEventHandler.
   checkBox.onchange = checkBoxEventHandler;
 };
 
 //cycle over incompleteTaskHolder ul list items
 //for each list item
 for (var i = 0; i < incompleteTaskHolder.children.length; i++) {
-  //bind events to list items chldren(tasksCompleted)
-  bindTaskEvents(incompleteTaskHolder.children[i], taskCompleted);
+  //bind events to list items chldren(taskscompl)
+  bindTaskEvents(incompleteTaskHolder.children[i], taskcompl);
 }
 
-//cycle over completedTasksHolder ul list items
-for (var i = 0; i < completedTasksHolder.children.length; i++) {
-  //bind events to list items chldren(tasksIncompleted)
-  bindTaskEvents(completedTasksHolder.children[i], taskIncomplete);
+//cycle over complTasksHolder ul list items
+for (var i = 0; i < complTasksHolder.children.length; i++) {
+  //bind events to list items chldren(tasksIncompl)
+  bindTaskEvents(complTasksHolder.children[i], taskIncomplete);
 }
 
 // Issues with usability don't get seen until they are in front of a human tester.

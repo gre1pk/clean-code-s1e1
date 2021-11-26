@@ -113,7 +113,7 @@ ul {
   margin: 0 10px;
 }
 
-.completed__tasks label {
+.compl__tasks label {
   text-decoration: line-through;
   color: #888;
 }
