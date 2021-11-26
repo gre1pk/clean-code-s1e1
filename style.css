@@ -113,7 +113,7 @@ ul {
   margin: 0 10px;
 }
 
-.compl__tasks label {
+.compl__tasks .input-text {
   text-decoration: line-through;
   color: #888;
 }
@@ -121,6 +121,9 @@ ul {
   display: inline-block;
   width: 224px;
 }
-.edit-mode__tasks label {
+.edit-mode__tasks .input-text {
   display: none;
 }
+/* .edit-mode__tasks label {
+  display: none;
+} */
