@@ -1,5 +1,5 @@
 /* Basic Style */
-body {
+.page {
   background-color: #f8f8f8;
   color: #333;
   font-family: Lato, sans-serif;
@@ -22,12 +22,12 @@ ul {
 .btn:hover {
   color: #3a3a3a;
 }
-.delete img {
+.delete__img{
   height: 2em;
   transform: rotateZ(45deg);
   transition: transform 200ms ease-in;
 }
-.delete img:hover {
+.delete__img:hover {
   transform: rotateZ(0);
 }
 .title {
@@ -59,6 +59,7 @@ ul {
   border-radius: 6px;
   font-family: Lato, sans-serif;
   color: #888;
+  flex-grow: 1;
 }
 .input-text--grow:focus {
   color: #333;
@@ -88,7 +89,6 @@ ul {
   width: 500px;
   margin: 0 auto 0;
 }
-
 .add-task__wrapper {
   display: flex;
   padding: 20px 0;
@@ -108,21 +108,20 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
-.tasks__item input[type="text"] {
-  display: none;
-}
 .input-checkbox {
   margin: 0 10px;
 }
-
 .compl__tasks .input-text {
   text-decoration: line-through;
   color: #888;
 }
-.edit-mode__tasks input[type="text"] {
+.edit-mode__tasks .input-text--dark {
   display: inline-block;
   width: 224px;
 }
 .edit-mode__tasks .input-text {
+  display: none;
+}
+.input-text--dark{
   display: none;
 }
