@@ -108,7 +108,7 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
-.tasks__item input[type='text'] {
+.tasks__item input[type="text"] {
   display: none;
 }
 .input-checkbox {
@@ -119,13 +119,10 @@ ul {
   text-decoration: line-through;
   color: #888;
 }
-.edit-mode__tasks input[type='text'] {
+.edit-mode__tasks input[type="text"] {
   display: inline-block;
   width: 224px;
 }
 .edit-mode__tasks .input-text {
   display: none;
 }
-/* .edit-mode__tasks label {
-  display: none;
-} */
