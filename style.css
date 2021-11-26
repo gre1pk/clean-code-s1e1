@@ -77,9 +77,11 @@ ul {
 }
 
 @media (max-width: 768px) {
+
   .header {
     text-align: center;
   }
+
 }
 .main {
   display: block;
@@ -106,7 +108,7 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
-.tasks__item input[type='text']{
+.tasks__item input[type='text'] {
   display: none;
 }
 .input-checkbox {
